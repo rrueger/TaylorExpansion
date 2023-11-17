@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sage-taylorexpansion"
+version = "0.9.0"
+authors = [
+    {name = "Ryan Rueger", email = "rrueger@ethz.ch"},
+    {name = "Markus Schwagenscheidt", email = "info@markus-schwagenscheidt.de"},
+]
+description = "A sage module implementing Zagier's method of computing Taylor expansions of modular forms"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "AGPL-3.0-only"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Sagemath",
+]
+# Do not specify sagemath as a dependency as it is not distributed (officially)
+# on PyPi
+dependencies = [
+    'importlib-metadata; python_version<"3.8"',
+    'datetime'
+]
+
+[project.scripts]
+taylor-expansion = "TaylorExpansion:main"
